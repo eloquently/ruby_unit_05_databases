@@ -1,0 +1,65 @@
+The first step to this assignment is to create a database schema modeling a school district.
+
+You need to model the following objects:
+
+Schools
+* name
+* min_grade - starting grade level at this school
+* max_grade - highest grade level at this school
+* next_school_id - school students will move to upon graduation
+
+Teachers
+* first_name
+* last_name
+
+Students
+* first_name
+* last_name
+* grade
+
+Classes
+* name
+
+Tests
+* name - The name of the test (e.g. Test 1)
+* score - The score a student earned on the test
+
+Schools have many teachers, classes, students, and tests.
+Teachers have many classes and students.
+Students have many classes, teachers, and tests.
+Classes have many students and tests.
+
+
+The first step is to write a set of SQL statements that will create
+a database with the appropriate rows and columns.
+
+Create a file, schema.sql in the lib directory with all of your
+CREATE TABLE statements. No need to worry about INSERTing any data
+at this point.
+
+Once your file is done push your branch to bitbucket and message
+Eric on Slack to take a look at it.
+
+After Eric tells you it looks good, merge the step_2 branch into
+your branch. If you get any conflicts, let Eric know and he can
+help you with the merge.
+
+After merging in step_2, you will see a file called seed_data.sql.
+This file contains initial data for your database in the form of
+INSERT statements. It will take a couple min (2 min on my cloud9
+instance for sqlite3 to run all the INSERTS).
+
+You should take a look at the data and run some basic SELECTs in the
+sqlite3 command line interface to get a feel for how the data works.
+
+Once you're done, take a look at the district_analyzer.rb file. It
+has descriptions of several methods you should implement that will
+provide users of the database with useful information about the
+school district.
+
+Most of the work for the methods should be done in SQL. They should
+consist of a single SQL query whose result is then returned. For
+everything except the count methods, you should just return the
+array that you get from sqlite3 with results_as_hash = true, and
+the rspec tests will pass if your query is correct.
+
