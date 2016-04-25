@@ -20,21 +20,21 @@ describe 'schema' do
     describe "schools table" do
         it 'has correct columns' do
             columns = get_column_names('schools')
-            expect(columns).to contain_exactly('id', 'name', 'min_grade', 'max_grade', 'prev_school_id', 'next_school_id')
+            expect(columns).to contain_exactly('id', 'name', 'min_grade', 'max_grade', 'next_school_id')
         end
     end
 
     describe "teachers table" do
         it "has correct columns" do
             columns = get_column_names('teachers')
-            expect(columns).to contain_exactly('id','first_name','last_name','school_id')
+            expect(columns).to contain_exactly('id', 'first_name', 'last_name', 'school_id')
         end
     end
 
     describe "students table" do
         it "has correct columns" do
             columns = get_column_names('students')
-            expect(columns).to contain_exactly('id', 'first_name', 'last_name', 'grade', 'school_id')
+            expect(columns).to contain_exactly('id', 'first_name', 'last_name', 'grade_level', 'school_id')
         end
     end
 
