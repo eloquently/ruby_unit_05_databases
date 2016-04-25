@@ -107,6 +107,36 @@ class DistrictAnalyzer
         return query(query, false)
     end
 
+     # find the hardest n teachers in the district based on the average test
+    # scores in all of their classes
+    # e.g. [ { first_name: "Jane", last_name: "Doe",
+    #          school_name: "Phoenix High School", avg_test_score: 65 },
+    #        { first_name: "Jane", last_name: "Doe",
+    #          school_name: "Phoenix High School", avg_test_score: 65 }, ... ]
+    def hardest_teachers(n)
+        query = <<-SQL
+        SELECT
+            teachers.id, teachers.first_name, teachers.last_name,
+            AVG(tests.score) AS avg_test_score
+        FROM
+            tests
+        INNER JOIN
+            classes
+        ON
+            tests.class_id = classes.id
+        INNER JOIN
+            teachers
+        ON
+            classes.id=teachers.id
+        GROUP BY
+            teachers.id
+        ORDER BY
+            avg_test_score
+        LIMIT #{n};
+        SQL
+        return query(query)
+    end
+
     # return the top n students in the district based on their average test score
     # this method should return an array where each element is a hash
     # containing each student's first name, last name, school name, and score
@@ -174,37 +204,6 @@ class DistrictAnalyzer
         SQL
         return query(query, true)
     end
-
-    # find the hardest n teachers in the district based on the average test
-    # scores in all of their classes
-    # e.g. [ { first_name: "Jane", last_name: "Doe",
-    #          school_name: "Phoenix High School", avg_test_score: 65 },
-    #        { first_name: "Jane", last_name: "Doe",
-    #          school_name: "Phoenix High School", avg_test_score: 65 }, ... ]
-    def hardest_teachers(n)
-        query = <<-SQL
-        SELECT
-            teachers.id, teachers.first_name, teachers.last_name,
-            AVG(tests.score) AS avg_test_score
-        FROM
-            tests
-        INNER JOIN
-            classes
-        ON
-            tests.class_id = classes.id
-        INNER JOIN
-            teachers
-        ON
-            classes.id=teachers.id
-        GROUP BY
-            teachers.id
-        ORDER BY
-            avg_test_score
-        LIMIT #{n};
-        SQL
-        return query(query)
-    end
-
 
     # At the end of the school year a few things need to happen.
     # 1) All students should be advanced one grade
