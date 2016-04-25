@@ -41,11 +41,13 @@ class DistrictAnalyzer
     def list_teachers(school_id)
     end
 
-    # get a list of all teachers' first and last names that teach at school id
-    # this method should return an array where each element is a hash
-    # containing the first name and last name of the people of interest
-    # e.g. [ { first_name: "Jane", last_name: "Doe" },
-    #        { first_name: "John", last_name: "Smith" }, ... ]
+    # get a list of all the classes taught by a particular teacher.
+    # this method should return an array whtere each element is a hash
+    # containing the first name of the teacher, last name of the teacher,
+    # and the name of one of the teachers' classes
+    # e.g. [ { first_name: "Jane", last_name: "Doe", class_name: "English" },
+    #        { first_name: "John", last_name: "Smith", class_name: "Spanish" },
+    #        ... ]
     def teacher_info(teacher_id)
     end
 
