@@ -123,7 +123,7 @@ class DistrictAnalyzer
         INNER JOIN
             teachers
         ON
-            classes.id=teachers.id
+            classes.teacher_id=teachers.id
         GROUP BY
             teachers.id
         ORDER BY
