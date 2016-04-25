@@ -1,20 +1,20 @@
 INSERT INTO schools (id, name, min_grade, max_grade)
     VALUES (1, 'Phoenix High School', 9, 12);
 
-INSERT INTO schools (id, name, min_grade, max_grade)
-    VALUES (2, 'Phoenix Middle School', 6, 8);
+INSERT INTO schools (id, name, min_grade, max_grade, next_school_id)
+    VALUES (2, 'Phoenix Middle School', 6, 8, 1);
 
-INSERT INTO schools (id, name, min_grade, max_grade)
-    VALUES (3, 'Phoenix Elementary School', 1, 5);
+INSERT INTO schools (id, name, min_grade, max_grade, next_school_id)
+    VALUES (3, 'Phoenix Elementary School', 1, 5, 2);
 
 INSERT INTO schools (id, name, min_grade, max_grade)
     VALUES (4, 'Tempe High School', 9, 12);
 
-INSERT INTO schools (id, name, min_grade, max_grade)
-    VALUES (5, 'Tempe Middle School', 6, 8);
+INSERT INTO schools (id, name, min_grade, max_grade, next_school_id)
+    VALUES (5, 'Tempe Middle School', 6, 8, 4);
 
-INSERT INTO schools (id, name, min_grade, max_grade)
-    VALUES (6, 'Tempe Elementary School', 1, 5);
+INSERT INTO schools (id, name, min_grade, max_grade, next_school_id)
+    VALUES (6, 'Tempe Elementary School', 1, 5, 5);
 
 /* Teacher Data */
 INSERT INTO teachers (id, first_name, last_name, school_id) VALUES (1, "Elizabeth", "Mckinney", 1);
