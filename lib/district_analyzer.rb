@@ -81,7 +81,7 @@ class DistrictAnalyzer
     def bottom_students(n)
     end
 
-    # At the end of the school year a few things need to happen.
+    # at the end of the school year a few things need to happen.
     # 1) All students should be advanced one grade
     # 2) Students who have graduated from one school should be sent to the next
     #       school. Students who have graduated from high school should be
@@ -89,8 +89,10 @@ class DistrictAnalyzer
     # 3) All data describing which students are in which classes should be
     #       removed from the database.
     # 4) All data on tests should be removed from the database.
-    # This model does not need to return anything -- check the tests for
-    # the postconditions of this function
+    # this method does not need to return anything.
+
+    # write your own tests for this method using SQL queries to ensure
+    # that all the conditions are met.
     def year_end_updates
     end
 end
