@@ -15,7 +15,7 @@ Teachers
 Students
 * first_name
 * last_name
-* grade
+* grade_level
 
 Classes
 * name
