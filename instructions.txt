@@ -40,17 +40,24 @@ at this point.
 Once your file is done push your branch to bitbucket and message
 Eric on Slack to take a look at it.
 
-After Eric tells you it looks good, merge the step_2 branch into
+After Eric tells you it looks good, merge the origin/step_2 branch into
 your branch. If you get any conflicts, let Eric know and he can
 help you with the merge.
+
+git merge origin/step_2
 
 After merging in step_2, you will see a file called seed_data.sql.
 This file contains initial data for your database in the form of
 INSERT statements. It will take a couple min (2 min on my cloud9
 instance for sqlite3 to run all the INSERTS).
 
+sqlite3 db/development.sqlite3 < lib/schema.sql
+sqlite3 db/development.sqlite3 < lib/seed_data.sql
+
 You should take a look at the data and run some basic SELECTs in the
 sqlite3 command line interface to get a feel for how the data works.
+
+sqlite3 db/development.sqlite3
 
 Once you're done, take a look at the district_analyzer.rb file. It
 has descriptions of several methods you should implement that will
