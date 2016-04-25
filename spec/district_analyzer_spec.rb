@@ -54,6 +54,12 @@ describe DistrictAnalyzer do
         end
     end
 
+    describe '#hardest_teachers' do
+        it 'gives correct result' do
+            expect(district_analyzer.hardest_teachers(2)).to eq([{"first_name"=>"Diana", "last_name"=>"Levine", "avg_test_score"=>75.65384615384616, 1=>"Diana", 2=>"Levine", 3=>75.65384615384616}, {"first_name"=>"Doris", "last_name"=>"Roach", "avg_test_score"=>76.41666666666667, 1=>"Doris", 2=>"Roach", 3=>76.41666666666667}])
+        end
+    end
+
     describe '#top_students' do
         it 'gives correct result' do
             expect(district_analyzer.top_students(3)).to eq([{"first_name"=>"Jerry", "last_name"=>"Burch", "name"=>"Phoenix Elementary School", "avg_test_score"=>94.5, 0=>"Jerry", 1=>"Burch", 2=>"Phoenix Elementary School", 3=>94.5}, {"first_name"=>"Margaret", "last_name"=>"Olsen", "name"=>"Tempe Middle School", "avg_test_score"=>93.66666666666667, 0=>"Margaret", 1=>"Olsen", 2=>"Tempe Middle School", 3=>93.66666666666667}, {"first_name"=>"Douglas", "last_name"=>"Russo", "name"=>"Phoenix Elementary School", "avg_test_score"=>93.0, 0=>"Douglas", 1=>"Russo", 2=>"Phoenix Elementary School", 3=>93.0}])
@@ -63,12 +69,6 @@ describe DistrictAnalyzer do
     describe '#bottom_students' do
         it 'gives correct result' do
             expect(district_analyzer.bottom_students(2)).to eq([{"first_name"=>"Stephen", "last_name"=>"Barajas", "name"=>"Phoenix Elementary School", "avg_test_score"=>64.33333333333333, 0=>"Stephen", 1=>"Barajas", 2=>"Phoenix Elementary School", 3=>64.33333333333333}, {"first_name"=>"Johnny", "last_name"=>"Shepard", "name"=>"Tempe High School", "avg_test_score"=>66.83333333333333, 0=>"Johnny", 1=>"Shepard", 2=>"Tempe High School", 3=>66.83333333333333}])
-        end
-    end
-
-    describe '#hardest_teachers' do
-        it 'gives correct result' do
-            expect(district_analyzer.hardest_teachers(2)).to eq([{"id"=>8, "first_name"=>"Diana", "last_name"=>"Levine", "avg_test_score"=>75.65384615384616, 0=>8, 1=>"Diana", 2=>"Levine", 3=>75.65384615384616}, {"id"=>48, "first_name"=>"Doris", "last_name"=>"Roach", "avg_test_score"=>76.41666666666667, 0=>48, 1=>"Doris", 2=>"Roach", 3=>76.41666666666667}])
         end
     end
 end

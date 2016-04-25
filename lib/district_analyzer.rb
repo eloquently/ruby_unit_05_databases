@@ -91,6 +91,6 @@ class DistrictAnalyzer
     # 4) All data on tests should be removed from the database.
     # This model does not need to return anything -- check the tests for
     # the postconditions of this function
-    def end_year_update
+    def year_end_updates
     end
 end
