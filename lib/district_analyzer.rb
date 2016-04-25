@@ -1,12 +1,18 @@
 require 'sqlite3'
 
 class DistrictAnalyzer
+    attr_accessor :path_to_db
+
+    def initialize(path_to_db)
+        self.path_to_db = path_to_db
+    end
 
     def query(q, results_as_hash=true)
         db = SQLite3::Database.new(path_to_db)
         db.results_as_hash = results_as_hash
-        db.execute(q)
+        result = db.execute(q)
         db.close
+        return result
     end
 
     # count how many students are in the district
@@ -18,7 +24,7 @@ class DistrictAnalyzer
         FROM
             students;
         SQL
-        result = self.db.execute(query, false)
+        result = query(query, false)
         return result[0][0]
     end
 

@@ -23,8 +23,6 @@ sql
 
 file.write(school_setup)
 
-
-
 first_names = File.read('first_names.csv').split("\n").map(&:capitalize)
 last_names = File.read('last_names.csv').split("\n").map(&:capitalize)
 
