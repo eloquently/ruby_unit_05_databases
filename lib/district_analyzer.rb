@@ -58,6 +58,13 @@ class DistrictAnalyzer
     def unique_classes(school_id)
     end
 
+    # find the hardest n teachers in the district based on the average test
+    # scores in all of their classes
+    # e.g. [ { first_name: "Jane", last_name: "Doe", avg_test_score: 72 },
+    #        { first_name: "John", last_name: "Smith", avg_test_score: 73 }, ... ]
+    def hardest_teachers(n)
+    end
+
     # return the top n students in the district based on their average test score
     # this method should return an array where each element is a hash
     # containing the first name, last name, and school name of the people
@@ -73,14 +80,6 @@ class DistrictAnalyzer
     #        { first_name: "John", last_name: "Smith", school_name: "" }, ... ]
     def bottom_students(n)
     end
-
-    # find the hardest n teachers in the district based on the average test
-    # scores in all of their classes
-    # e.g. [ { first_name: "Jane", last_name: "Doe", school_name: "" },
-    #        { first_name: "John", last_name: "Smith", school_name: "" }, ... ]
-    def hardest_teachers(n)
-    end
-
 
     # At the end of the school year a few things need to happen.
     # 1) All students should be advanced one grade
