@@ -14,6 +14,7 @@ describe DistrictAnalyzer do
             puts "Seeding db... this may take a few min (and should only run once)"
             @db.execute_batch(seed_data)
             puts "Seeding complete"
+            FileUtils.cp(clean_db_path, db_path)
         end
     end
 
