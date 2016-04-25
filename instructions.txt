@@ -51,8 +51,13 @@ This file contains initial data for your database in the form of
 INSERT statements. It will take a couple min (2 min on my cloud9
 instance for sqlite3 to run all the INSERTS).
 
+sqlite3 db/development.sqlite3 < lib/schema.sql
+sqlite3 db/development.sqlite3 < lib/seed_data.sql
+
 You should take a look at the data and run some basic SELECTs in the
 sqlite3 command line interface to get a feel for how the data works.
+
+sqlite3 db/development.sqlite3
 
 Once you're done, take a look at the district_analyzer.rb file. It
 has descriptions of several methods you should implement that will
