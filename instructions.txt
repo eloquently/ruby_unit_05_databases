@@ -40,9 +40,11 @@ at this point.
 Once your file is done push your branch to bitbucket and message
 Eric on Slack to take a look at it.
 
-After Eric tells you it looks good, merge the step_2 branch into
+After Eric tells you it looks good, merge the origin/step_2 branch into
 your branch. If you get any conflicts, let Eric know and he can
 help you with the merge.
+
+git merge origin/step_2
 
 After merging in step_2, you will see a file called seed_data.sql.
 This file contains initial data for your database in the form of
