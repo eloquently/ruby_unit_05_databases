@@ -57,7 +57,7 @@ describe DistrictAnalyzer do
 
     describe '#hardest_teachers' do
         it 'gives correct result' do
-            expect(district_analyzer.hardest_teachers(2)).to eq([{"first_name"=>"Diana", "last_name"=>"Levine", "avg_test_score"=>75.65384615384616, 0=>"Diana", 1=>"Levine", 2=>75.65384615384616}, {"first_name"=>"Doris", "last_name"=>"Roach", "avg_test_score"=>76.41666666666667, 0=>"Doris", 1=>"Roach", 2=>76.41666666666667}])
+            expect(district_analyzer.hardest_teachers(2)).to eq([{"first_name"=>"Virginia", "last_name"=>"Guerra", "avg_test_score"=>77.19444444444444, 0=>"Virginia", 1=>"Guerra", 2=>77.19444444444444}, {"first_name"=>"Randy", "last_name"=>"Cross", "avg_test_score"=>78.03125, 0=>"Randy", 1=>"Cross", 2=>78.03125}])
         end
     end
 
