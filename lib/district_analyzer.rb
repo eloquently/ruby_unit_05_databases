@@ -64,13 +64,11 @@ class DistrictAnalyzer
         return query(query)
     end
 
-    # list a teacher's name and which classes he/she teaches given a teacher_id
-    # this method should return an array with one element for each class taught
-    # by the teacher. Each element should be a hash with the teacher's names and
-    # the name of one of their classes.
-
-    # e.g. [ { first_name: "Jane", last_name: "Doe", class_name: "Algebra" },
-    #        { first_name: "Jane", last_name: "Doe", class_name: "Calculus" } ]
+    # get a list of all teachers' first and last names that teach at school id
+    # this method should return an array where each element is a hash
+    # containing the first name and last name of the people of interest
+    # e.g. [ { first_name: "Jane", last_name: "Doe" },
+    #        { first_name: "John", last_name: "Smith" }, ... ]
     def teacher_info(teacher_id)
         query = <<-SQL
         SELECT
@@ -107,16 +105,14 @@ class DistrictAnalyzer
         return query(query, false)
     end
 
-     # find the hardest n teachers in the district based on the average test
+    # find the hardest n teachers in the district based on the average test
     # scores in all of their classes
-    # e.g. [ { first_name: "Jane", last_name: "Doe",
-    #          school_name: "Phoenix High School", avg_test_score: 65 },
-    #        { first_name: "Jane", last_name: "Doe",
-    #          school_name: "Phoenix High School", avg_test_score: 65 }, ... ]
+    # e.g. [ { first_name: "Jane", last_name: "Doe", avg_test_score: 65 },
+    #        { first_name: "Jane", last_name: "Doe", avg_test_score: 65 }, ... ]
     def hardest_teachers(n)
         query = <<-SQL
         SELECT
-            teachers.id, teachers.first_name, teachers.last_name,
+            teachers.first_name, teachers.last_name,
             AVG(tests.score) AS avg_test_score
         FROM
             tests
@@ -137,8 +133,8 @@ class DistrictAnalyzer
         return query(query)
     end
 
-    # return the top n students in the district based on their average test score
-    # this method should return an array where each element is a hash
+    # return the top n students in the district based on their average test
+    # score this method should return an array where each element is a hash
     # containing each student's first name, last name, school name, and score
     # e.g. [ { first_name: "Jane", last_name: "Doe",
     #          school_name: "Tempe High School", avg_test_score: 99 },
@@ -217,8 +213,4 @@ class DistrictAnalyzer
     # the postconditions of this function
     def end_year_update
     end
-
 end
-
-da = DistrictAnalyzer.new('db/seeded_test_db.sqlite3')
-puts da.hardest_teachers(2).inspect
