@@ -41,13 +41,11 @@ class DistrictAnalyzer
     def list_teachers(school_id)
     end
 
-    # list a teacher's name and which classes he/she teaches given a teacher_id
-    # this method should return an array with one element for each class taught
-    # by the teacher. Each element should be a hash with the teacher's names and
-    # the name of one of their classes.
-
-    # e.g. [ { first_name: "Jane", last_name: "Doe", class_name: "Algebra" },
-    #        { first_name: "Jane", last_name: "Doe", class_name: "Calculus" } ]
+    # get a list of all teachers' first and last names that teach at school id
+    # this method should return an array where each element is a hash
+    # containing the first name and last name of the people of interest
+    # e.g. [ { first_name: "Jane", last_name: "Doe" },
+    #        { first_name: "John", last_name: "Smith" }, ... ]
     def teacher_info(teacher_id)
     end
 
@@ -55,21 +53,23 @@ class DistrictAnalyzer
     # this method should return an array where each element is an array with one
     # element
     # e.g. [ ["Spanish"], ["French"], ... ]
-    def unique_classes(school_id)
+    def class_catalog(school_id)
     end
 
-    # find the hardest n teachers in the district based on the average test
+     # find the hardest n teachers in the district based on the average test
     # scores in all of their classes
-    # e.g. [ { first_name: "Jane", last_name: "Doe", avg_test_score: 72 },
-    #        { first_name: "John", last_name: "Smith", avg_test_score: 73 }, ... ]
+    # e.g. [ { first_name: "Jane", last_name: "Doe", avg_test_score: 65 },
+    #        { first_name: "Jane", last_name: "Doe", avg_test_score: 65 }, ... ]
     def hardest_teachers(n)
     end
 
-    # return the top n students in the district based on their average test score
-    # this method should return an array where each element is a hash
-    # containing the first name, last name, and school name of the people
-    # e.g. [ { first_name: "Jane", last_name: "Doe", school_name: "" },
-    #        { first_name: "John", last_name: "Smith", school_name: "" }, ... ]
+    # return the top n students in the district based on their average test
+    # score this method should return an array where each element is a hash
+    # containing each student's first name, last name, school name, and score
+    # e.g. [ { first_name: "Jane", last_name: "Doe",
+    #          school_name: "Tempe High School", avg_test_score: 99 },
+    #        { first_name: "Cindy", last_name: "Doe",
+    #          school_name: "Tempe Middle School", avg_test_score: 95 }, ... ]
     def top_students(n)
     end
 
@@ -93,5 +93,4 @@ class DistrictAnalyzer
     # the postconditions of this function
     def end_year_update
     end
-
 end
